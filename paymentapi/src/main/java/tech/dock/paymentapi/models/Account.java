@@ -28,7 +28,10 @@ public class Account extends BaseModel<Integer> {
     private Person person;
 
     @Column
-    private BigDecimal balance;
+    private Boolean active = true;
+
+    @Column
+    private BigDecimal balance = BigDecimal.ZERO;
 
     @Column(name = "withdraw_limit")
     private BigDecimal withdrawLimit;
@@ -39,7 +42,4 @@ public class Account extends BaseModel<Integer> {
     @Column(name = "creation_date")
     @Temporal(TemporalType.DATE)
     private Date creationDate;
-
-
-
 }

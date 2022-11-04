@@ -44,12 +44,12 @@ class PersonControllerTests {
     }
 
     @Test
-    void shouldErrorNonexistentAccount() throws Exception {
+    void shouldErrorNonexistentPerson() throws Exception {
         this.mockMvc.perform(get(baseUrl.concat("/1000"))).andDo(print()).andExpect(status().isNotFound());
     }
 
     @Test
-    void shouldCreateAccount() throws Exception {
+    void shouldCreatePerson() throws Exception {
         this.mockMvc.perform(post(baseUrl)
                 .content(MapperUtil.asJsonString(new PersonDTO("Arya Stark", "123.456.789-10", new Date())))
                 .contentType(MediaType.APPLICATION_JSON)

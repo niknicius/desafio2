@@ -1,9 +1,6 @@
 package tech.dock.paymentapi.models;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import tech.dock.paymentapi.core.base.BaseModel;
 
 import javax.persistence.*;
@@ -11,10 +8,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 public class Transaction extends BaseModel<Integer> {
 
     @Id
