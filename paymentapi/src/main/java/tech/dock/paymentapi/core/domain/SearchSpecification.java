@@ -11,6 +11,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Search Specification
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 public class SearchSpecification<M> implements Specification<M> {
     private String search = "";
 
@@ -57,6 +62,7 @@ public class SearchSpecification<M> implements Specification<M> {
         );
         return criteriaBuilder.or(predicates.toArray(new Predicate[0]));
     }
+
 
     private List<Field> getValidFields(Root<M> root) {
         List<String> permittedTypes = Arrays.asList(

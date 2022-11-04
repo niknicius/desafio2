@@ -6,6 +6,11 @@ import tech.dock.paymentapi.core.base.BaseService;
 import tech.dock.paymentapi.models.Person;
 import tech.dock.paymentapi.repository.PersonRepository;
 
+/**
+ * Person Service Class
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 @Service
 public class PersonService extends BaseService<Person, Integer> {
 

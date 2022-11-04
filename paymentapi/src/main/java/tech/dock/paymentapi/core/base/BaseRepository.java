@@ -12,14 +12,27 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.io.Serializable;
 
+/**
+ * Reusable repository with pagination and search support
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 @NoRepositoryBean
 public interface BaseRepository<M extends BaseModel<K>, K extends Serializable>
         extends PagingAndSortingRepository<M, Serializable>, JpaSpecificationExecutor<M> {
 
+    /**
+     * Find all items with the specified filter and page settings
+     * @return Page
+     */
     default Page<M> findAll(SearchDto searchFilter, Pageable pageable) {
         return this.findAll(generateSpecification(searchFilter.getSearch()), pageable);
     }
 
+    /**
+     * Generate the search specification
+     * @return Specification
+     */
     default Specification<M> generateSpecification(String search) {
         return new SearchSpecification<>(search);
     }

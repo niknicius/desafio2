@@ -10,6 +10,11 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * Account Model Class
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 @Entity
 @Getter
 @Setter

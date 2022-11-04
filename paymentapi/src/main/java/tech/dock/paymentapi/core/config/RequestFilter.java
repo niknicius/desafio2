@@ -9,6 +9,11 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Custom Filter
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Slf4j

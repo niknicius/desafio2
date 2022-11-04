@@ -15,6 +15,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Account Service Class
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 @Service
 public class AccountService extends BaseService<Account, Integer> {
 

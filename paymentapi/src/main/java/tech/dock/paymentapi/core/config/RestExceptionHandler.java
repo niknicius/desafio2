@@ -13,6 +13,11 @@ import tech.dock.paymentapi.core.dto.ErrorDto;
 
 import java.util.Date;
 
+/**
+ * Rest Exception Handler
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 @RestControllerAdvice
 public class RestExceptionHandler {
 

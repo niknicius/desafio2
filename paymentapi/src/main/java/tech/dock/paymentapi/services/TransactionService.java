@@ -10,6 +10,11 @@ import tech.dock.paymentapi.repository.TransactionRepository;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Transaction Service Class
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 @Service
 public class TransactionService extends BaseService<Transaction, Integer> {
 

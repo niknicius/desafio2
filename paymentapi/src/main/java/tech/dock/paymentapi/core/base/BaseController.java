@@ -16,10 +16,19 @@ import tech.dock.paymentapi.core.util.MapperUtil;
 import javax.servlet.http.HttpServletRequest;
 import javax.websocket.server.PathParam;
 
+/**
+ * Reusable controller class
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
+ */
 public abstract class BaseController<M extends BaseModel<K>, K extends Serializable, D extends BaseDTO> {
 
     protected abstract BaseService<M, K> getService();
 
+    /**
+     * Process the request and return all items
+     * @return ResponseEntity
+     */
     @GetMapping("")
     public ResponseEntity<Page<M>> getAll(HttpServletRequest request, @PathParam("filters") String filters){
         SearchDto searchDto = new SearchDto();
@@ -32,6 +41,10 @@ public abstract class BaseController<M extends BaseModel<K>, K extends Serializa
         return new ResponseEntity<>(result, httpStatus);
     }
 
+    /**
+     * Process the request and delete the requested item
+     * @return ResponseEntity
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable("id") K id) {
         this.getService().delete(id);

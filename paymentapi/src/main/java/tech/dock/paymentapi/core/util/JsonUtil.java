@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 /**
  * Json Utilities
+ *
+ * @author Vinnicius Santos - vinnicius.santos@dcx.ufpb.br
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JsonUtil {
