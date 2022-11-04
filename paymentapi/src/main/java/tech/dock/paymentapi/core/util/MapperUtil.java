@@ -1,8 +1,10 @@
 package tech.dock.paymentapi.core.util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
+import tech.dock.paymentapi.core.exception.BusinessException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +28,13 @@ public final class MapperUtil {
             sourceList.forEach(item -> list.add(map(item, destClass)));
         }
         return list;
+    }
+
+    public static String asJsonString(final Object obj) throws BusinessException {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new BusinessException("user.entity");
+        }
     }
 }

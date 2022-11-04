@@ -5,7 +5,7 @@ import java.util.List;
 
 import tech.dock.paymentapi.core.util.MapperUtil;
 
-public abstract class BaseController<M extends BaseModel<K>, K extends Serializable, D extends BaseDto> {
+public abstract class BaseController<M extends BaseModel<K>, K extends Serializable, D extends BaseDTO> {
 
     protected <S, Z> Z mapTo(S source, Class<Z> destClass) {
         return MapperUtil.map(source, destClass);

@@ -12,7 +12,7 @@ import java.util.Locale;
 public class BusinessException extends Exception {
 
     public BusinessException(String message) {
-        this(message, LocaleContextHolder.getLocale(), null);
+        this(message, Locale.ENGLISH, null);
     }
 
     public BusinessException(String message, Locale locale, Exception e){
